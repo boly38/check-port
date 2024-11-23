@@ -1,0 +1,32 @@
+{
+  "name": "check-port",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "a tool that check a given TCP port is accepting connection",
+  "private": false,
+  "keywords": [
+    "tcp",
+    "port",
+    "check"
+  ],
+  "author": "Edmond Meinfelder, Boly38",
+  "fork-from": "https://github.com/stdarg/tcp-port-used",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boly38/check-port"
+  },
+  "homepage": "https://github.com/boly38/check-port",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --trace-warnings --exit --timeout 180000 --unhandled-rejections=strict tests/*.test.js"
+  },
+  "dependencies": {
+    "debug": "^4.3.7",
+    "is2": "^2.0.9",
+    "net": "^1.0.2",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "mocha": "^10.8.2"
+  }
+}
