@@ -19,6 +19,11 @@ npm install
 node samples/basic.js
 ````
 
+to use this library 
+````javascript
+import checkPort from "@boly38/check-port"
+````
+
 ## accept port on localhost:44204
 
 Example to set up a port listener
