@@ -1,7 +1,15 @@
 name: ci
 
+## REQUIREMENTS
+# publish to npmjs : NPM_DEPLOY_TOKEN : https://www.npmjs.com/settings/<user>/tokens
 on:
   pull_request:
+    # run if and only if update on sub-part or repository matching paths
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -32,3 +40,10 @@ jobs:
 
       - name: Run tests
         run: npm run test
+
+      - name: Publish NpmJS package
+        if: github.ref == 'refs/heads/npmjs'
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_DEPLOY_TOKEN }}" > .npmrc
+          npm whoami # rely on .npmrc
+          npm publish
