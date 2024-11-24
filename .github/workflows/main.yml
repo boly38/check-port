@@ -3,6 +3,10 @@ name: ci
 ## REQUIREMENTS
 # publish to npmjs : NPM_DEPLOY_TOKEN : https://www.npmjs.com/settings/<user>/tokens
 on:
+  push:
+    branches:
+      - 'npmjs'
+      - 'main'
   pull_request:
     # run if and only if update on sub-part or repository matching paths
     paths:
