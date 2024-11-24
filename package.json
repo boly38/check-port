@@ -1,5 +1,5 @@
 {
-  "name": "check-port",
+  "name": "@boly38/check-port",
   "version": "1.0.0",
   "type": "module",
   "description": "a tool that check a given TCP port is accepting connection",
